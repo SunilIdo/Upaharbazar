@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Adminpanel.master.cs" Inherits="Admin_Adminpanel" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<%--datepicker js--%>
+<script type="text/javascript" src="../js/jquery.js" language="javascript"></script>
+<script src="../js/jquery-ui.js" type="text/javascript" language="javascript"></script>
+<link type="text/css" href="../css/jquery-ui.css" rel="Stylesheet"/>
+
+    <title></title>
+   
+    <style type="text/css">
+        .StyleReg1
+        {
+            height: 196px;
+        }
+        .style2
+        {
+            width: 229px;
+        }
+        .style3
+        {
+            height: 196px;
+            width: 229px;
+        }
+        .style4
+        {
+            height: 34px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+   
+        
+            <table border="1" style="width:100%;">
+                <tr>
+                    <td class="style2">
+                        <asp:Image ID="Image1" runat="server" Height="106px" Width="151px" 
+                            ImageUrl="~/Admin/Images/images (4).jpg" />
+                    </td>
+                    <td style="text-align: right" valign="bottom">
+                        <asp:Button ID="btnlogout" runat="server" Text="Logout" 
+                            style="text-align: right" onclick="btnlogout_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style3" valign="top">
+                        <asp:SiteMapPath ID="SiteMapPath1" runat="server" 
+                            SiteMapProvider="SiteMapDataSource1">
+                        </asp:SiteMapPath>
+                        <br />
+                        <br />
+                        <asp:Menu ID="Menu1" runat="server" BackColor="#F7F6F3" 
+                            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                            ForeColor="#7C6F57" StaticSubMenuIndent="10px" Width="93px">
+                            <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#F7F6F3" />
+                            <DynamicSelectedStyle BackColor="#5D7B9D" />
+                            <Items>
+                                <asp:MenuItem Text="Home" ToolTip="Click here to move to home" Value="Home" 
+                                    NavigateUrl="~/Admin/Home.aspx">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Product" ToolTip="Click here to manage products" 
+                                    Value="Product" NavigateUrl="~/Admin/Product.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Category" ToolTip="Click here to manage category" 
+                                    Value="Category" NavigateUrl="~/Admin/Category.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Order" ToolTip="Click here to manage order" Value="Order" 
+                                    NavigateUrl="~/Admin/Order.aspx">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="User" ToolTip="Click here to manage users" Value="User" 
+                                    NavigateUrl="~/Admin/User.aspx">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Page" ToolTip="Click here to manage pages" Value="Page" 
+                                    NavigateUrl="~/Admin/Page.aspx">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Banner" ToolTip="Click here to manage banner" 
+                                    Value="Banner" NavigateUrl="~/Admin/Banner.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/Occasion.aspx" Text="Occasion" 
+                                    ToolTip="Go to Occasion Page" Value="Occasion"></asp:MenuItem>
+                                <asp:MenuItem Text="Special Gift" Value="Special Gift" 
+                                    NavigateUrl="~/Admin/SpecialOccasion.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Delivery Charge" Value="Delivery Charge" 
+                                    NavigateUrl="~/Admin/DeliveryCharge.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/FeaturedItems.aspx" Text="Featured Items" 
+                                    Value="Featured Items"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/SpecialOccasionGifts.aspx" 
+                                    Text="Secial Occasion Gifts" Value="Secial Occasion Gifts"></asp:MenuItem>
+                            </Items>
+                            <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#5D7B9D" />
+                        </asp:Menu>
+                    </td>
+                    <td class="StyleReg1">
+                        <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
+                        Body
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="style4">
+                        footer</td>
+                </tr>
+            </table>
+        
+       
+    </form>
+</body>
+</html>
